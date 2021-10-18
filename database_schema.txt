@@ -1,0 +1,28 @@
+leagues
+    id - integer
+    name - string
+    country - string
+
+teams
+    id - integer
+    name - string
+    league_id - integer
+    city - string
+
+players
+    id - integer
+    name - string
+    birth_date - date
+    birth_place - string
+    height - integer
+    weight - integer
+    position - string
+    total_goals - integer
+    
+teams_players
+    id - integer
+    team_id - integer
+    player_id - integer
+    played_from - date
+    played_to - date
+    

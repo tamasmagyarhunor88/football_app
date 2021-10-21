@@ -15,7 +15,10 @@ class CreateLeaguesTable extends Migration
     {
         Schema::create('leagues', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('country');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

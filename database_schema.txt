@@ -28,5 +28,8 @@ players
     created_at - date
     updated_at - date
     deleted_at - date
+<<<<<<< HEAD
 
     
+=======
+>>>>>>> 3be68515ebbe4c6213598f435b61d7282aa6536b

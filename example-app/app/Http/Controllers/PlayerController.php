@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Player;
 use Illuminate\Http\Request;
-use App\Models\League;
 
-class LeagueController extends Controller
+class PlayerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return League[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
+     * @return Player[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
      */
     public function index()
     {
-        return League::all();
+        return Player::all();
     }
 
     /**
@@ -25,45 +25,45 @@ class LeagueController extends Controller
      */
     public function store(Request $request)
     {
-        $league = League::create($request->all());
+        $player = Player::create($request->all());
 
-        return response()->json($league, 201);
+        return response()->json($player, 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  League  $league
-     * @return League
+     * @param  Player  $player
+     * @return Player
      */
-    public function show(League $league)
+    public function show(Player $player)
     {
-        return $league;
+        return $player;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  League $league
+     * @param  Player $player
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, League $league)
+    public function update(Request $request, Player $player)
     {
-        $league->update($request->all());
+        $player->update($request->all());
 
-        return response()->json($league, 200);
+        return response()->json($player, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  League $league
+     * @param  Player $player
      * @return \Illuminate\Http\Response
      */
-    public function destroy(League $league)
+    public function destroy(Player $player)
     {
-        $league->delete();
+        $player->delete();
 
         return response()->json(null, 204);
     }

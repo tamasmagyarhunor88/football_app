@@ -2,27 +2,34 @@ leagues
     id - integer
     name - string
     country - string
+    created_at - date
+    updated_at - date
+    deleted_at - date
 
 teams
     id - integer
     name - string
     league_id - integer
     city - string
+    created_at - date
+    updated_at - date
+    deleted_at - date
 
 players
     id - integer
     name - string
+    team_id -integer
     birth_date - date
     birth_place - string
     height - integer
     weight - integer
     position - string
     total_goals - integer
+    created_at - date
+    updated_at - date
+    deleted_at - date
+<<<<<<< HEAD
+
     
-teams_players
-    id - integer
-    team_id - integer
-    player_id - integer
-    played_from - date
-    played_to - date
-    
+=======
+>>>>>>> 3be68515ebbe4c6213598f435b61d7282aa6536b

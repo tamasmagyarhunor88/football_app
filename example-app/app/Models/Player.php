@@ -9,6 +9,22 @@ class Player extends Model
 {
     use HasFactory;
 
+    protected $table = 'players';
+
+    protected $fillable = [
+        'name',
+        'team_id',
+        'birth_date',
+        'birth_place',
+        'height',
+        'weight',
+        'postition',
+        'total_goals'
+    ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function team()
     {
         return $this->belongsTo(Team::class);

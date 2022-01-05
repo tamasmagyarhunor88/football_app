@@ -6,7 +6,7 @@ use App\Models\Team;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 
-class TeamsTableSeeder extends Seeder
+class TeamsSeeder extends Seeder
 {
     /**
      * Run the database seeds.

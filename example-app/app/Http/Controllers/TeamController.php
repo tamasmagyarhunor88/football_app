@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\League;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -14,20 +15,20 @@ class TeamController extends Controller
      */
     public function index()
     {
-        return Team::all();
+        return Team::paginate(10);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function store(Request $request)
     {
         $team = Team::create($request->all());
 
-        return response()->json($team, 201);
+        return $this->home();
     }
 
     /**
@@ -66,5 +67,13 @@ class TeamController extends Controller
         $team->delete();
 
         return response()->json(null, 204);
+    }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function home()
+    {
+        return view('team', ['leagues' => League::all()]);
     }
 }

@@ -1,10 +1,16 @@
 <?php
 
-use App\Http\Controllers\PlayerController;
-use App\Http\Controllers\TeamController;
+use App\Http\Resources\LeagueCollection;
+use App\Models\League;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LeagueController;
+use App\Http\Resources\LeagueResource;
+use App\Http\Controllers\TeamController;
+use App\Http\Resources\TeamResource;
+use App\Http\Controllers\PlayerController;
+use App\Http\Resources\PlayerResource;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +30,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // League
 Route::get('/leagues', [LeagueController::class, 'index']);
 Route::get('/leagues/{league}', [LeagueController::class, 'show']);
+Route::get('/leagues/{league}/teams', [LeagueController::class, 'teams']);
 Route::post('/leagues', [LeagueController::class, 'store']);
 Route::put('/leagues/{league}', [LeagueController::class,'update']);
 Route::delete('/leagues/{league}', [LeagueController::class,'delete']);

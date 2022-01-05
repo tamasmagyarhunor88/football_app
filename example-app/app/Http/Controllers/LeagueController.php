@@ -14,7 +14,7 @@ class LeagueController extends Controller
      */
     public function index()
     {
-        return League::all();
+        return League::paginate(10);
     }
 
     /**
@@ -66,5 +66,14 @@ class LeagueController extends Controller
         $league->delete();
 
         return response()->json(null, 204);
+    }
+
+    /**
+     * @param int $league
+     * @return mixed
+     */
+    public function teams(int $league)
+    {
+        return League::with('teams')->find($league);
     }
 }

@@ -5,7 +5,8 @@ namespace Database\Seeders;
 use App\Models\League;
 use Illuminate\Database\Seeder;
 
-class LeaguesTableSeeder extends Seeder
+class
+LeaguesSeeder extends Seeder
 {
     /**
      * Run the database seeds.

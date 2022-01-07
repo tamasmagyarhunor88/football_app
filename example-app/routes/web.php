@@ -25,3 +25,8 @@ Route::get('/teams/home', [TeamController::class, 'home'])->name('home');
 Route::post('/teams', [TeamController::class, 'store'])->name('teams');
 
 Route::get('/leagues/{league}/teams', [LeagueController::class, 'teams'])->name('leagueTeams');
+
+Route::get('/leagues/home', [LeagueController::class, 'home'])->name('home');
+
+Route::post('/leagues', [LeagueController::class, 'store'])->name('leagues');
+

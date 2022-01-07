@@ -35,7 +35,7 @@
     </div>
     <div class="my-4 mt-12">
         <div class="mx-4 mt-12">
-            <h4 class="font-medium text-gray-600 mb-2">Schools members</h4>
+            <h4 class="font-medium text-gray-600 mb-2">League Teams</h4>
             <table>
                 <thead>
                 <tr>

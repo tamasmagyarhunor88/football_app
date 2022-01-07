@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\League;
+use App\Models\Team;
+use Illuminate\Http\Request;
 
 class LeagueController extends Controller
 {
@@ -21,13 +22,13 @@ class LeagueController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function store(Request $request)
     {
         $league = League::create($request->all());
 
-        return response()->json($league, 201);
+        return $this->home();
     }
 
     /**
@@ -75,5 +76,13 @@ class LeagueController extends Controller
     public function teams(int $league)
     {
         return League::with('teams')->find($league);
+    }
+    
+   /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function home()
+    {
+        return view('league', ['leagues' => League::all()]);
     }
 }

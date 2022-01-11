@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LeagueController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\PlayerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +30,8 @@ Route::get('/leagues/{league}/teams', [LeagueController::class, 'teams'])->name(
 Route::get('/leagues/home', [LeagueController::class, 'home'])->name('home');
 
 Route::post('/leagues', [LeagueController::class, 'store'])->name('leagues');
+
+Route::get('/players/home', [PlayerController::class, 'home'])->name('home');
+
+Route::post('/players', [PlayerController::class, 'store'])->name('players');
 

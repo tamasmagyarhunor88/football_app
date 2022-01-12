@@ -1,5 +1,6 @@
 <?php
 
+use App\Repositories\LeagueRepository;
 use App\Http\Controllers\LeagueController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PlayerController;
@@ -27,7 +28,7 @@ Route::post('/teams', [TeamController::class, 'store'])->name('teams');
 
 Route::get('/leagues/{league}/teams', [LeagueController::class, 'teams'])->name('leagueTeams');
 
-Route::get('/leagues/home', [LeagueController::class, 'home'])->name('home');
+Route::get('/leagues/home', [LeagueRepository::class, 'home'])->name('home');
 
 Route::post('/leagues', [LeagueController::class, 'store'])->name('leagues');
 

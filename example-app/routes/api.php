@@ -28,12 +28,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // League
-Route::get('/leagues', [LeagueController::class, 'index']);
-Route::get('/leagues/{league}', [LeagueController::class, 'show']);
-Route::get('/leagues/{league}/teams', [LeagueController::class, 'teams']);
-Route::post('/leagues', [LeagueController::class, 'store']);
-Route::put('/leagues/{league}', [LeagueController::class,'update']);
-Route::delete('/leagues/{league}', [LeagueController::class,'delete']);
+// Route::get('/leagues', [LeagueController::class, 'index']);
+// Route::get('/leagues/{league}', [LeagueController::class, 'show']);
+// Route::get('/leagues/{league}/teams', [LeagueController::class, 'teams']);
+// Route::post('/leagues', [LeagueController::class, 'store']);
+// Route::put('/leagues/{league}', [LeagueController::class,'update']);
+// Route::delete('/leagues/{league}', [LeagueController::class,'delete']);
+
+Route::get('leagues', [LeagueController::class, 'index']);
+Route::get('leagues/{id}', [LeagueController::class, 'show']);
+Route::post('leagues', [LeagueController::class, 'store']);
+Route::put('leagues/{id}', [LeagueController::class, 'update']);
+Route::delete('leagues/{id}', [LeagueController::class, 'delete']);
 
 // Team
 Route::get('/teams', [TeamController::class, 'index']);
